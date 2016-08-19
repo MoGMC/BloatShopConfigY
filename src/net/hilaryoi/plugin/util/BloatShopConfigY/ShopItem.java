@@ -34,23 +34,11 @@ public class ShopItem {
 
 			s.append(":\n    RewardType: ");
 
-			if (isBuyShop) {
-					s.append("item");
-
-			} else {
-					s.append("money");
-
-			}
+			s.append(item.getRewardType());
 
 			s.append("\n    PriceType: ");
 
-			if (isBuyShop) {
-					s.append("money");
-
-			} else {
-					s.append("item");
-
-			}
+			s.append(item.getPriceType());
 
 			// price
 
@@ -83,7 +71,7 @@ public class ShopItem {
 			s.append("\n    MenuItem:\n    ");
 			s.append(toBloatMenu("    "));
 			s.append("\n    Message: ''\n    InventoryLocation: ");
-			s.append(item.invSlot + 1);
+			s.append(item.getInvSlot() + 1);
 			s.append("\n    ExtraPermission: ''\n");
 
 			return s.toString();
@@ -96,13 +84,38 @@ public class ShopItem {
 
 			s.append("- amount: 1\n");
 			s.append(tab);
-			s.append("- 'lore:&rAmount: ");
-			s.append(item.amount);
-			s.append("#&rPrice: $");
-			s.append(decimalFormat.format(price));
-			s.append("'");
+
+			if (!isFree()) {
+
+					s.append("- 'lore:&rAmount: ");
+					s.append(item.getAmount());
+					s.append("#&rPrice: $");
+					s.append(decimalFormat.format(price));
+					s.append("'");
+
+			}
 
 			return s.toString();
+
+		}
+
+		public double getPrice() {
+			return price;
+
+		}
+
+		public boolean isFree() {
+			return price == 0;
+
+		}
+
+		public void multiplyPrice(double multiplier) {
+			price *= multiplier;
+
+		}
+
+		public void multiplyQuantity(double multiplier) {
+			item.setAmount((int) (item.getAmount() * multiplier));
 
 		}
 

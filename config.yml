@@ -14,10 +14,11 @@ convert:
 #   modify: (optional) (adds an item or changes an item with the exact same markup)
 #     item: price
 #       slot: slot (optional)
-  bulkbuyfood:
-    oldshop:
+  BulkBuyShop:
+    oldshop: BuyShop
     newtype: buy
-    pricemultiplier: 1
+    name: "Bulk Buy Shop"
+    pricemultiplier: 64
     quantitymultiplier: 64
 
 
@@ -45,7 +46,8 @@ shops:
     name: "Foodstuffs"
     icon: "WHEAT;"
     items:
+      "BARRIER;26^&rBack]shop*free$": 0
       "RAW_FISH;": 1
       "MELON;": 1
-      "POTATO_ITEM;26^": 1
+      "POTATO_ITEM;": 1
       "EGG;": 1

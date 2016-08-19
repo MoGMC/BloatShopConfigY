@@ -7,6 +7,8 @@ import org.bukkit.configuration.ConfigurationSection;
 
 public class Shop {
 
+		// TODO: combine shopItem and item
+
 		String shopId;
 
 		boolean isBuyShop;
@@ -31,14 +33,14 @@ public class Shop {
 
 			for (String itemKey : itemsConfig.getKeys(false)) {
 
-					ShopItem item = new ShopItem(Util.fromMarkup(itemKey), itemsConfig.getDouble(itemKey));
+					ShopItem item = new ShopItem(Util.fromMarkup(itemKey, isBuyShop), itemsConfig.getDouble(itemKey));
 
-					if (item.getRawItem().invSlot == -1) {
+					if (item.getRawItem().getInvSlot() == -1) {
 
 						for (int i = 0; i < inv.length; i++) {
 
 								if (!inv[i]) {
-									
+
 									System.out.println(i);
 
 									item.getRawItem().setInvSlot(i);
@@ -50,13 +52,13 @@ public class Shop {
 
 					}
 
-					if (item.getRawItem().invSlot == -1) {
+					if (item.getRawItem().getInvSlot() == -1) {
 						System.err.println("Inventory conflict: Item could not be assigned a slot. Is the inventory full? Skipping item " + itemKey);
 						continue;
 
 					}
 
-					inv[item.getRawItem().invSlot] = true;
+					inv[item.getRawItem().getInvSlot()] = true;
 
 					items.add(item);
 
@@ -81,6 +83,51 @@ public class Shop {
 			}
 
 			return s.toString();
+
+		}
+
+		public Shop(Shop shop) {
+
+			this.shopId = shop.shopId;
+			this.isBuyShop = shop.isBuyShop;
+			this.displayName = shop.displayName;
+			this.items = shop.items;
+			this.inv = shop.inv;
+
+		}
+
+		public void setShopId(String shopId) {
+			this.shopId = shopId;
+
+		}
+
+		public void setIsBuyShop(boolean isBuyShop) {
+			this.isBuyShop = isBuyShop;
+
+		}
+
+		public List<ShopItem> getItems() {
+			return items;
+
+		}
+
+		public Shop getModifiedShop(String newId, ConfigurationSection config) {
+
+			Shop shop = new Shop(this);
+
+			shop.setShopId(newId);
+
+			isBuyShop = config.getString("newtype").equalsIgnoreCase("buy");
+			displayName = config.getString("name");
+
+			for (ShopItem i : shop.getItems()) {
+
+					i.multiplyPrice(config.getDouble("pricemultiplier"));
+					i.multiplyQuantity(config.getDouble("quantitymultiplier"));
+
+			}
+
+			return shop;
 
 		}
 

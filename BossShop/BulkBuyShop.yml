@@ -1,5 +1,5 @@
-ShopName: BuyShop
-DisplayName: 'Bulk Buy Shop'
+ShopName: BulkBuyShop
+DisplayName: 'Foodstuffs'
 shop:
   BARRIER:
     RewardType: shop
