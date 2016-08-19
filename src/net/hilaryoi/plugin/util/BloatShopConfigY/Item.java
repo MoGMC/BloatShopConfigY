@@ -9,12 +9,16 @@ public class Item {
 		short durability;
 		String displayName;
 
+		int invSlot;
+
 		public Item() {
 
 			mat = Material.DIRT;
 			amount = 1;
 			durability = 0;
 			displayName = null;
+
+			invSlot = -1;
 
 		}
 
@@ -40,6 +44,11 @@ public class Item {
 
 		public void setDisplayName(String displayName) {
 			this.displayName = displayName;
+
+		}
+
+		public void setInvSlot(int invSlot) {
+			this.invSlot = invSlot;
 
 		}
 

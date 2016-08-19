@@ -1,20 +1,26 @@
 package net.hilaryoi.plugin.util.BloatShopConfigY;
 
+import java.text.DecimalFormat;
+
 public class ShopItem {
 
 		// itemstack only stores type and durability so dont use it lol
 
 		double price;
 
-		int invSlot;
-
 		Item item;
 
-		public ShopItem(Item item, double price, int invSlot) {
+		static DecimalFormat decimalFormat = new DecimalFormat("0.00");
+
+		public ShopItem(Item item, double price) {
 
 			this.item = item;
 			this.price = price;
-			this.invSlot = invSlot;
+
+		}
+
+		public Item getRawItem() {
+			return item;
 
 		}
 
@@ -77,7 +83,7 @@ public class ShopItem {
 			s.append("\n    MenuItem:\n    ");
 			s.append(toBloatMenu("    "));
 			s.append("\n    Message: ''\n    InventoryLocation: ");
-			s.append(invSlot);
+			s.append(item.invSlot + 1);
 			s.append("\n    ExtraPermission: ''\n");
 
 			return s.toString();
@@ -92,8 +98,8 @@ public class ShopItem {
 			s.append(tab);
 			s.append("- 'lore:&rAmount: ");
 			s.append(item.amount);
-			s.append("#Price: ");
-			s.append(price);
+			s.append("#&rPrice: $");
+			s.append(decimalFormat.format(price));
 			s.append("'");
 
 			return s.toString();

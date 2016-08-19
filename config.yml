@@ -28,6 +28,7 @@ convert:
   # Max Quantity ','
   # Enchantment 'enchantment|lvl)' https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html
   # Custom Name ']'
+  # Custom Slot '^'
 
 shops:
 # shopid:
@@ -46,6 +47,5 @@ shops:
     items:
       "RAW_FISH;": 1
       "MELON;": 1
-      "POTATO;": 1
+      "POTATO_ITEM;26^": 1
       "EGG;": 1
-      

@@ -52,6 +52,13 @@ public class Util {
 						b.setLength(0);
 
 						break;
+						
+					case '^':
+					
+						item.setInvSlot(Integer.valueOf(b.toString()));
+						b.setLength(0);
+						
+						break;
 
 					default:
 

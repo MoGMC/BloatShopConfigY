@@ -31,38 +31,34 @@ public class Shop {
 
 			for (String itemKey : itemsConfig.getKeys(false)) {
 
-					int invSlot = -1;
+					ShopItem item = new ShopItem(Util.fromMarkup(itemKey), itemsConfig.getDouble(itemKey));
 
-					if (itemsConfig.contains(itemKey + ".slot")) {
-						invSlot = itemsConfig.getInt(itemKey + ".slot");
-
-						if (inv[invSlot]) {
-								System.err.println("Inventory conflict: Two items cannot exist at inventory location " + invSlot + ". Skipping item " + itemKey);
-								continue;
-
-						}
-
-					} else {
+					if (item.getRawItem().invSlot == -1) {
 
 						for (int i = 0; i < inv.length; i++) {
 
 								if (!inv[i]) {
-									invSlot = i;
+									
+									System.out.println(i);
+
+									item.getRawItem().setInvSlot(i);
+
+									break;
 
 								}
-
 						}
 
 					}
 
-					if (invSlot == -1) {
-						System.err.println("Inventory conflict: Item could not be assigned a slot. Is the inventory full?");
+					if (item.getRawItem().invSlot == -1) {
+						System.err.println("Inventory conflict: Item could not be assigned a slot. Is the inventory full? Skipping item " + itemKey);
+						continue;
 
 					}
 
-					inv[invSlot] = true;
+					inv[item.getRawItem().invSlot] = true;
 
-					items.add(new ShopItem(Util.fromMarkup(itemKey), itemsConfig.getDouble(itemKey), invSlot));
+					items.add(item);
 
 			}
 

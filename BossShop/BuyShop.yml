@@ -11,9 +11,9 @@ shop:
     MenuItem:
     - type:RAW_FISH
     - amount: 1
-    - 'lore:&rAmount: 1#Price: 1.0'
+    - 'lore:&rAmount: 1#&rPrice: $1.00'
     Message: ''
-    InventoryLocation: 26
+    InventoryLocation: 1
     ExtraPermission: ''
   MELON:
     RewardType: item
@@ -25,23 +25,23 @@ shop:
     MenuItem:
     - type:MELON
     - amount: 1
-    - 'lore:&rAmount: 1#Price: 1.0'
+    - 'lore:&rAmount: 1#&rPrice: $1.00'
     Message: ''
-    InventoryLocation: 25
+    InventoryLocation: 2
     ExtraPermission: ''
-  POTATO:
+  POTATO_ITEM:
     RewardType: item
     PriceType: money
     Price: 1.0
     Reward:
-    - - type:POTATO
+    - - type:POTATO_ITEM
       - amount:1
     MenuItem:
-    - type:POTATO
+    - type:POTATO_ITEM
     - amount: 1
-    - 'lore:&rAmount: 1#Price: 1.0'
+    - 'lore:&rAmount: 1#&rPrice: $1.00'
     Message: ''
-    InventoryLocation: 24
+    InventoryLocation: 27
     ExtraPermission: ''
   EGG:
     RewardType: item
@@ -53,7 +53,7 @@ shop:
     MenuItem:
     - type:EGG
     - amount: 1
-    - 'lore:&rAmount: 1#Price: 1.0'
+    - 'lore:&rAmount: 1#&rPrice: $1.00'
     Message: ''
-    InventoryLocation: 23
+    InventoryLocation: 3
     ExtraPermission: ''
