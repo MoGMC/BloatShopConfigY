@@ -1,0 +1,68 @@
+package net.hilaryoi.plugin.util.BloatShopConfigY;
+
+import org.bukkit.Material;
+
+public class Util {
+
+		public static Item fromMarkup(String markup) {
+
+			Item item = new Item();
+
+			StringBuilder b = new StringBuilder();
+
+			for (char c : markup.toCharArray()) {
+
+					switch (c) {
+
+					case ';':
+
+						item.setMaterial(Material.getMaterial(b.toString()));
+						b.setLength(0);
+
+						break;
+
+					case ',':
+
+						item.setAmount(Integer.valueOf(b.toString()));
+						b.setLength(0);
+
+						break;
+
+					// case ')':
+
+					// String[] ench = b.toString().split("\\|");
+
+					// item.addEnchantment(Enchantment.getByName(ench[0]), Integer.valueOf(ench[1]));
+
+					// b.setLength(0);
+
+					// break;
+
+					case ':':
+
+						item.setDurability(Short.valueOf(b.toString()));
+						b.setLength(0);
+
+						break;
+
+					case ']':
+
+						item.setDisplayName(b.toString());
+
+						b.setLength(0);
+
+						break;
+
+					default:
+
+						b.append(c);
+
+					}
+
+			}
+
+			return item;
+
+		}
+
+}

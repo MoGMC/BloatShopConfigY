@@ -1,4 +1,7 @@
+package net.hilaryoi.plugin.util.BloatShopConfigY;
+
 import java.io.File;
+import java.io.IOException;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -18,7 +21,16 @@ public class Main {
 
 			p.parseData();
 
-			p.exportBloatShopConfig(new File(exportDir));
+			try {
+					p.exportBloatShopConfig(new File(exportDir));
+
+			} catch (IOException e) {
+					System.err.println("Error while exporting bloated config:");
+					e.printStackTrace();
+
+			}
+
+			System.out.println("K");
 
 		}
 

@@ -33,19 +33,19 @@ shops:
 # shopid:
 #   type: buy/sell (either 'buy' or 'sell'; 'buy' exchanges player money for server items, 'sell' exchanges player item for server money)
 #   name: "My Shop"
-#   icon: STONE (the item id of the item representing the shop in the main menu)
+#   icon: STONE (the item representing the shop in a menu: can use markup.)
 #   items:
 #     item: price
 #       slot: slot (optional)
 #     item: price
 #     item: price
-  buyfood:
+  BuyShop:
     type: buy
     name: "Foodstuffs"
-    icon: WHEAT
+    icon: "WHEAT;"
     items:
-      RAW_FISH: 1
-      MELON: 1
-      POTATO: 1
-      EGG: 1
+      "RAW_FISH;": 1
+      "MELON;": 1
+      "POTATO;": 1
+      "EGG;": 1
       
