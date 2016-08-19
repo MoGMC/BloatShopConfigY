@@ -1,0 +1,59 @@
+ShopName: BuyShop
+DisplayName: 'Foodstuffs'
+shop:
+  RAW_FISH:
+    RewardType: item
+    PriceType: money
+    Price: 1.0
+    Reward:
+    - - type:RAW_FISH
+      - amount:1
+    MenuItem:
+    - type:RAW_FISH
+    - amount: 1
+    - 'lore:&rAmount: 1#Price: 1.0'
+    Message: ''
+    InventoryLocation: 26
+    ExtraPermission: ''
+  MELON:
+    RewardType: item
+    PriceType: money
+    Price: 1.0
+    Reward:
+    - - type:MELON
+      - amount:1
+    MenuItem:
+    - type:MELON
+    - amount: 1
+    - 'lore:&rAmount: 1#Price: 1.0'
+    Message: ''
+    InventoryLocation: 25
+    ExtraPermission: ''
+  POTATO:
+    RewardType: item
+    PriceType: money
+    Price: 1.0
+    Reward:
+    - - type:POTATO
+      - amount:1
+    MenuItem:
+    - type:POTATO
+    - amount: 1
+    - 'lore:&rAmount: 1#Price: 1.0'
+    Message: ''
+    InventoryLocation: 24
+    ExtraPermission: ''
+  EGG:
+    RewardType: item
+    PriceType: money
+    Price: 1.0
+    Reward:
+    - - type:EGG
+      - amount:1
+    MenuItem:
+    - type:EGG
+    - amount: 1
+    - 'lore:&rAmount: 1#Price: 1.0'
+    Message: ''
+    InventoryLocation: 23
+    ExtraPermission: ''
