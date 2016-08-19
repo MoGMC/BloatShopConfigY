@@ -1,0 +1,52 @@
+# pseudo config
+
+# creates a new shop with price and quantity multipliers
+# note that the plugin converts shops by going down the list, so shops higher on the list will be created before those lower down.
+convert:
+# newshop:
+#   oldshop: oldshopid
+#   newtype: buy/sell
+#   pricemultiplier: multiplier (multiplies all prices by this)
+#   quantitymultiplier: multiplier (multiplies all prices by this)
+#   exclude: (optional)
+#     - item (markup must be exactly the same)
+#     - item
+#   modify: (optional) (adds an item or changes an item with the exact same markup)
+#     item: price
+#       slot: slot (optional)
+  bulkbuyfood:
+    oldshop:
+    newtype: buy
+    pricemultiplier: 1
+    quantitymultiplier: 64
+    
+    
+
+
+# End markers
+  # Item ID ';' - 
+  # Item Damage Value ':'
+  # Max Quantity ',' - adds one plus random.getInt(quantity) so if you put in "4" it'll be from 1-4 items.
+  # Enchantment 'ID|LVL)'
+  # Name ']
+
+shops:
+# shopid:
+#   type: buy/sell (either 'buy' or 'sell'; 'buy' exchanges player money for server items, 'sell' exchanges player item for server money)
+#   name: "My Shop"
+#   icon: STONE (the item id of the item representing the shop in the main menu)
+#   items:
+#     item: price
+#       slot: slot (optional)
+#     item: price
+#     item: price
+  buyfood:
+    type: buy
+    name: "Foodstuffs"
+    icon: WHEAT
+    items:
+      RAW_FISH: 1
+      MELON: 1
+      POTATO: 1
+      EGG: 1
+      
