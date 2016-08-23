@@ -38,9 +38,14 @@ public class Parser {
 
 					ConfigurationSection convertConfig = convertList.getConfigurationSection(convert);
 
-					shops.put(convert, shops.get(convertConfig.getString("oldshop")).getModifiedShop(convert, convertConfig));
+					shops.put(convert, new Shop(convert, shops.get(convertConfig.getString("oldshop")), convertConfig, this));
 
 			}
+
+		}
+
+		public Shop getShop(String shopId) {
+			return shops.get(shopId);
 
 		}
 

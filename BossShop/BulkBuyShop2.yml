@@ -1,0 +1,353 @@
+ShopName: BulkBuyShop2
+DisplayName: 'Bulk Buy Shop 2'
+shop:
+  HAY_BLOCK35:
+    RewardType: shop
+    PriceType: free
+    Price: 0.0
+    Reward: menu
+    MenuItem:
+    - type:HAY_BLOCK
+    - 'name:&rBack'
+    - amount: 1
+    
+    Message: ''
+    InventoryLocation: 36
+    ExtraPermission: ''
+  LOG34:
+    RewardType: shop
+    PriceType: free
+    Price: 0.0
+    Reward: BulkBuyShop2
+    MenuItem:
+    - type:LOG
+    - 'name:&4Bulk Buy Shop 2'
+    - amount: 1
+    
+    Message: ''
+    InventoryLocation: 35
+    ExtraPermission: ''
+  QUARTZ0:
+    RewardType: item
+    PriceType: money
+    Price: 6400.0
+    Reward: 
+    - - type:QUARTZ
+      - amount:64
+    MenuItem:
+    - type:QUARTZ
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $6400.00'
+    Message: ''
+    InventoryLocation: 1
+    ExtraPermission: ''
+  QUARTZ_BLOCK1:
+    RewardType: item
+    PriceType: money
+    Price: 57600.0
+    Reward: 
+    - - type:QUARTZ_BLOCK
+      - amount:64
+    MenuItem:
+    - type:QUARTZ_BLOCK
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $57600.00'
+    Message: ''
+    InventoryLocation: 2
+    ExtraPermission: ''
+  GLASS2:
+    RewardType: item
+    PriceType: money
+    Price: 896.0
+    Reward: 
+    - - type:GLASS
+      - amount:64
+    MenuItem:
+    - type:GLASS
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $896.00'
+    Message: ''
+    InventoryLocation: 3
+    ExtraPermission: ''
+  LOG3:
+    RewardType: item
+    PriceType: money
+    Price: 256.0
+    Reward: 
+    - - type:LOG
+      - amount:64
+    MenuItem:
+    - type:LOG
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $256.00'
+    Message: ''
+    InventoryLocation: 4
+    ExtraPermission: ''
+  SAND4:
+    RewardType: item
+    PriceType: money
+    Price: 640.0
+    Reward: 
+    - - type:SAND
+      - amount:64
+    MenuItem:
+    - type:SAND
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $640.00'
+    Message: ''
+    InventoryLocation: 5
+    ExtraPermission: ''
+  CACTUS5:
+    RewardType: item
+    PriceType: money
+    Price: 256.0
+    Reward: 
+    - - type:CACTUS
+      - amount:64
+    MenuItem:
+    - type:CACTUS
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $256.00'
+    Message: ''
+    InventoryLocation: 6
+    ExtraPermission: ''
+  DIRT6:
+    RewardType: item
+    PriceType: money
+    Price: 640.0
+    Reward: 
+    - - type:DIRT
+      - amount:64
+    MenuItem:
+    - type:DIRT
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $640.00'
+    Message: ''
+    InventoryLocation: 7
+    ExtraPermission: ''
+  COBBLESTONE7:
+    RewardType: item
+    PriceType: money
+    Price: 64.0
+    Reward: 
+    - - type:COBBLESTONE
+      - amount:64
+    MenuItem:
+    - type:COBBLESTONE
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $64.00'
+    Message: ''
+    InventoryLocation: 8
+    ExtraPermission: ''
+  MOSSY_COBBLESTONE8:
+    RewardType: item
+    PriceType: money
+    Price: 1280.0
+    Reward: 
+    - - type:MOSSY_COBBLESTONE
+      - amount:64
+    MenuItem:
+    - type:MOSSY_COBBLESTONE
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $1280.00'
+    Message: ''
+    InventoryLocation: 9
+    ExtraPermission: ''
+  OBSIDIAN9:
+    RewardType: item
+    PriceType: money
+    Price: 1280.0
+    Reward: 
+    - - type:OBSIDIAN
+      - amount:64
+    MenuItem:
+    - type:OBSIDIAN
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $1280.00'
+    Message: ''
+    InventoryLocation: 10
+    ExtraPermission: ''
+  GRAVEL10:
+    RewardType: item
+    PriceType: money
+    Price: 320.0
+    Reward: 
+    - - type:GRAVEL
+      - amount:64
+    MenuItem:
+    - type:GRAVEL
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $320.00'
+    Message: ''
+    InventoryLocation: 11
+    ExtraPermission: ''
+  FLINT11:
+    RewardType: item
+    PriceType: money
+    Price: 640.0
+    Reward: 
+    - - type:FLINT
+      - amount:64
+    MenuItem:
+    - type:FLINT
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $640.00'
+    Message: ''
+    InventoryLocation: 12
+    ExtraPermission: ''
+  COAL12:
+    RewardType: item
+    PriceType: money
+    Price: 896.0
+    Reward: 
+    - - type:COAL
+      - amount:64
+    MenuItem:
+    - type:COAL
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $896.00'
+    Message: ''
+    InventoryLocation: 13
+    ExtraPermission: ''
+  IRON_INGOT13:
+    RewardType: item
+    PriceType: money
+    Price: 3200.0
+    Reward: 
+    - - type:IRON_INGOT
+      - amount:64
+    MenuItem:
+    - type:IRON_INGOT
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $3200.00'
+    Message: ''
+    InventoryLocation: 14
+    ExtraPermission: ''
+  GOLD_INGOT14:
+    RewardType: item
+    PriceType: money
+    Price: 6400.0
+    Reward: 
+    - - type:GOLD_INGOT
+      - amount:64
+    MenuItem:
+    - type:GOLD_INGOT
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $6400.00'
+    Message: ''
+    InventoryLocation: 15
+    ExtraPermission: ''
+  DIAMOND15:
+    RewardType: item
+    PriceType: money
+    Price: 12800.0
+    Reward: 
+    - - type:DIAMOND
+      - amount:64
+    MenuItem:
+    - type:DIAMOND
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $12800.00'
+    Message: ''
+    InventoryLocation: 16
+    ExtraPermission: ''
+  INK_SACK16:
+    RewardType: item
+    PriceType: money
+    Price: 3200.0
+    Reward: 
+    - - type:INK_SACK
+      - durability:4
+      - amount:64
+    MenuItem:
+    - type:INK_SACK
+    - durability:4
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $3200.00'
+    Message: ''
+    InventoryLocation: 17
+    ExtraPermission: ''
+  EMERALD17:
+    RewardType: item
+    PriceType: money
+    Price: 6400.0
+    Reward: 
+    - - type:EMERALD
+      - amount:64
+    MenuItem:
+    - type:EMERALD
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $6400.00'
+    Message: ''
+    InventoryLocation: 18
+    ExtraPermission: ''
+  EXP_BOTTLE18:
+    RewardType: item
+    PriceType: money
+    Price: 3200.0
+    Reward: 
+    - - type:EXP_BOTTLE
+      - amount:64
+    MenuItem:
+    - type:EXP_BOTTLE
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $3200.00'
+    Message: ''
+    InventoryLocation: 19
+    ExtraPermission: ''
+  IRON_BARDING19:
+    RewardType: item
+    PriceType: money
+    Price: 32000.0
+    Reward: 
+    - - type:IRON_BARDING
+      - amount:64
+    MenuItem:
+    - type:IRON_BARDING
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $32000.00'
+    Message: ''
+    InventoryLocation: 20
+    ExtraPermission: ''
+  GOLD_BARDING20:
+    RewardType: item
+    PriceType: money
+    Price: 64000.0
+    Reward: 
+    - - type:GOLD_BARDING
+      - amount:64
+    MenuItem:
+    - type:GOLD_BARDING
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $64000.00'
+    Message: ''
+    InventoryLocation: 21
+    ExtraPermission: ''
+  DIAMOND_BARDING21:
+    RewardType: item
+    PriceType: money
+    Price: 128000.0
+    Reward: 
+    - - type:DIAMOND_BARDING
+      - amount:64
+    MenuItem:
+    - type:DIAMOND_BARDING
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $128000.00'
+    Message: ''
+    InventoryLocation: 22
+    ExtraPermission: ''
+  SADDLE22:
+    RewardType: item
+    PriceType: money
+    Price: 64000.0
+    Reward: 
+    - - type:SADDLE
+      - amount:64
+    MenuItem:
+    - type:SADDLE
+    - amount: 1
+    - 'lore:&rAmount: 64#&rPrice: $64000.00'
+    Message: ''
+    InventoryLocation: 23
+    ExtraPermission: ''

@@ -4,9 +4,9 @@ import org.bukkit.Material;
 
 public class Util {
 
-		public static Item fromMarkup(String markup, boolean isBuyShop) {
+		public static Item fromMarkup(String markup, double price, boolean isBuyShop) {
 
-			Item item = new Item(isBuyShop);
+			Item item = new Item(price, markup, isBuyShop);
 
 			StringBuilder b = new StringBuilder();
 
@@ -61,17 +61,22 @@ public class Util {
 
 					case '$':
 
-						item.setPriceType(b.toString());
+						item.overridePriceType(b.toString());
 						b.setLength(0);
 
 						break;
 
 					case '*':
 
-						item.setRewardType(b.toString());
+						item.overrideRewardType(b.toString());
 						b.setLength(0);
 
 						break;
+
+					case '@':
+
+						item.overrideReward(b.toString());
+						b.setLength(0);
 
 					default:
 

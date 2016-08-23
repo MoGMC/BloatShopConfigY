@@ -1,20 +1,114 @@
 package net.hilaryoi.plugin.util.BloatShopConfigY;
 
+import java.text.DecimalFormat;
+
 import org.bukkit.Material;
 
 public class Item {
+
+		double price;
+
+		String markup;
 
 		private Material mat;
 		private short durability;
 		private int amount;
 		private int invSlot;
 		private String displayName;
+		String lore;
 
 		private String priceType, rewardType;
 
-		public String toBloat(String tab) {
+		boolean isBuyShop;
 
-			StringBuilder s = startBloat(tab, amount);
+		String rewardOverride;
+
+		static DecimalFormat decimalFormat = new DecimalFormat("0.00");
+
+		public String toBloat(boolean isBuyShop) {
+
+			StringBuilder s = new StringBuilder("  ");
+			s.append(mat.toString());
+
+			// have to do this because buyshop lmao
+			s.append(invSlot);
+
+			// price and reward type
+
+			s.append(":\n    RewardType: ");
+			s.append(rewardType);
+
+			s.append("\n    PriceType: ");
+			s.append(priceType);
+
+			// price
+
+			s.append("\n    Price: ");
+			appendPR(s, isBuyShop);
+
+			// reward
+
+			s.append("\n    Reward: ");
+
+			if (rewardOverride != null) {
+					s.append(rewardOverride.toString());
+
+			} else {
+					appendPR(s, !isBuyShop);
+
+			}
+
+			// menu item/display
+
+			s.append("\n    MenuItem:\n    ");
+			s.append(getBloatedMenuItem("    "));
+			s.append("\n    Message: ''\n    InventoryLocation: ");
+			s.append(invSlot + 1);
+			s.append("\n    ExtraPermission: ''\n");
+
+			return s.toString();
+
+		}
+
+		public String getBloatedMenuItem(String tab) {
+
+			StringBuilder s = getInitialItemBloat(tab, 1);
+
+			s.append("- amount: 1\n");
+			s.append(tab);
+
+			if (!isFree() || !lore.isEmpty()) {
+
+					s.append("- 'lore:");
+
+					if (!lore.isEmpty()) {
+
+						s.append(lore);
+
+					}
+
+					if (!isFree()) {
+
+						s.append("&rAmount: ");
+						s.append(amount);
+						s.append("#&rPrice: $");
+						s.append(decimalFormat.format(price));
+
+					}
+
+					s.append("'");
+
+			}
+
+			return s.toString();
+
+		}
+
+		public String getBloatedItem(String tab) {
+
+			StringBuilder s = new StringBuilder("- ");
+
+			s.append(getInitialItemBloat(tab, amount));
 
 			s.append("- amount:");
 			s.append(amount);
@@ -23,7 +117,7 @@ public class Item {
 
 		}
 
-		public StringBuilder startBloat(String tab, int amount) {
+		public StringBuilder getInitialItemBloat(String tab, int amount) {
 
 			StringBuilder s = new StringBuilder("- type:");
 			s.append(mat.toString());
@@ -31,10 +125,21 @@ public class Item {
 			s.append("\n");
 			s.append(tab);
 
-			if (durability != 0) {
+			if (displayName != null) {
+
+					s.append("- 'name:");
+					s.append(displayName);
+					s.append("'\n");
 					s.append(tab);
-					s.append("\n- durability:");
-					s.append(durability);
+
+			}
+
+			if (durability != 0) {
+
+					s.append("- durability:");
+					s.append(getDurability());
+					s.append("\n");
+					s.append(tab);
 
 			}
 
@@ -42,13 +147,22 @@ public class Item {
 
 		}
 
-		public Item(boolean isBuyShop) {
+		public Item(double price, String markup, boolean isBuyShop) {
+
+			this.price = price;
+
+			this.markup = markup;
 
 			mat = Material.DIRT;
-			durability = 0;
+			durability = -1;
 			amount = 1;
 			invSlot = -1;
 			displayName = null;
+			lore = "";
+
+			this.isBuyShop = isBuyShop;
+
+			rewardOverride = null;
 
 			if (isBuyShop) {
 
@@ -61,6 +175,87 @@ public class Item {
 					priceType = "item";
 
 			}
+
+		}
+
+		public Item(Item oldItem, boolean isBuyShop, double priceMultiplier, double quantityMultiplier) {
+
+			this.markup = oldItem.getMarkup();
+
+			this.mat = oldItem.getMaterial();
+			this.durability = oldItem.getDurability();
+			this.amount = oldItem.getAmount();
+			this.invSlot = oldItem.getInvSlot();
+			this.displayName = oldItem.getDisplayName();
+			this.lore = oldItem.getLore();
+
+			priceType = oldItem.getPriceType();
+			rewardType = oldItem.getRewardType();
+
+			rewardOverride = oldItem.getRewardOverride();
+
+			if (isBuyShop != oldItem.isBuyShop()) {
+
+					if (oldItem.getPriceType().equals("money") && oldItem.getRewardType().equals("item")) {
+
+						priceType = "item";
+						rewardType = "money";
+
+					} else if (oldItem.getPriceType().equals("item") && oldItem.getRewardType().equals("money")) {
+
+						priceType = "money";
+						rewardType = "item";
+
+					}
+
+					this.isBuyShop = isBuyShop;
+
+			}
+
+			price = oldItem.getPrice() * priceMultiplier;
+
+			amount = (int) (oldItem.getAmount() * quantityMultiplier);
+
+		}
+
+		public boolean isRegularItem() {
+
+			if ((priceType.equals("money") && rewardType.equals("item")) || (priceType.equals("item") && rewardType.equals("money"))) {
+					return true;
+
+			} else {
+					return false;
+					
+			}
+
+		}
+
+		// pr = price/reward
+		public void appendPR(StringBuilder s, boolean reward) {
+
+			if (reward) {
+					s.append(price);
+
+			} else {
+					s.append("\n    ");
+					s.append(getBloatedItem("      "));
+
+			}
+
+		}
+
+		public boolean isFree() {
+			return price == 0;
+
+		}
+
+		public double getPrice() {
+			return price;
+
+		}
+
+		public String getMarkup() {
+			return markup;
 
 		}
 
@@ -85,7 +280,14 @@ public class Item {
 		}
 
 		public short getDurability() {
-			return durability;
+
+			if (durability == -1) {
+					return 0;
+
+			} else {
+					return durability;
+
+			}
 
 		}
 
@@ -114,12 +316,22 @@ public class Item {
 
 		}
 
-		public void setPriceType(String priceType) {
+		public boolean isBuyShop() {
+			return isBuyShop;
+
+		}
+
+		public String getLore() {
+			return lore;
+
+		}
+
+		public void overridePriceType(String priceType) {
 			this.priceType = priceType;
 
 		}
 
-		public void setRewardType(String rewardType) {
+		public void overrideRewardType(String rewardType) {
 			this.rewardType = rewardType;
 
 		}
@@ -131,6 +343,21 @@ public class Item {
 
 		public String getRewardType() {
 			return rewardType;
+
+		}
+
+		public String getRewardOverride() {
+			return rewardOverride;
+
+		}
+
+		public void overrideReward(String rewardOverride) {
+			this.rewardOverride = rewardOverride;
+
+		}
+
+		public void setLore(String lore) {
+			this.lore = lore;
 
 		}
 

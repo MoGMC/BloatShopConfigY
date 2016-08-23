@@ -1,0 +1,161 @@
+ShopName: SellShop2
+DisplayName: 'Sell Shop 2'
+shop:
+  HAY_BLOCK35:
+    RewardType: shop
+    PriceType: free
+    Price: 
+    - - type:HAY_BLOCK
+      - 'name:&rBack'
+      - amount:1
+    Reward: menu
+    MenuItem:
+    - type:HAY_BLOCK
+    - 'name:&rBack'
+    - amount: 1
+    
+    Message: ''
+    InventoryLocation: 36
+    ExtraPermission: ''
+  QUARTZ0:
+    RewardType: money
+    PriceType: item
+    Price: 
+    - - type:QUARTZ
+      - amount:1
+    Reward: 50.0
+    MenuItem:
+    - type:QUARTZ
+    - amount: 1
+    - 'lore:&rAmount: 1#&rPrice: $50.00'
+    Message: ''
+    InventoryLocation: 1
+    ExtraPermission: ''
+  QUARTZ_BLOCK1:
+    RewardType: money
+    PriceType: item
+    Price: 
+    - - type:QUARTZ_BLOCK
+      - amount:1
+    Reward: 450.0
+    MenuItem:
+    - type:QUARTZ_BLOCK
+    - amount: 1
+    - 'lore:&rAmount: 1#&rPrice: $450.00'
+    Message: ''
+    InventoryLocation: 2
+    ExtraPermission: ''
+  LOG2:
+    RewardType: money
+    PriceType: item
+    Price: 
+    - - type:LOG
+      - amount:1
+    Reward: 2.0
+    MenuItem:
+    - type:LOG
+    - amount: 1
+    - 'lore:&rAmount: 1#&rPrice: $2.00'
+    Message: ''
+    InventoryLocation: 3
+    ExtraPermission: ''
+  CACTUS3:
+    RewardType: money
+    PriceType: item
+    Price: 
+    - - type:CACTUS
+      - amount:1
+    Reward: 2.0
+    MenuItem:
+    - type:CACTUS
+    - amount: 1
+    - 'lore:&rAmount: 1#&rPrice: $2.00'
+    Message: ''
+    InventoryLocation: 4
+    ExtraPermission: ''
+  COBBLESTONE4:
+    RewardType: money
+    PriceType: item
+    Price: 
+    - - type:COBBLESTONE
+      - amount:1
+    Reward: 0.5
+    MenuItem:
+    - type:COBBLESTONE
+    - amount: 1
+    - 'lore:&rAmount: 1#&rPrice: $0.50'
+    Message: ''
+    InventoryLocation: 5
+    ExtraPermission: ''
+  OBSIDIAN5:
+    RewardType: money
+    PriceType: item
+    Price: 
+    - - type:OBSIDIAN
+      - amount:1
+    Reward: 10.0
+    MenuItem:
+    - type:OBSIDIAN
+    - amount: 1
+    - 'lore:&rAmount: 1#&rPrice: $10.00'
+    Message: ''
+    InventoryLocation: 6
+    ExtraPermission: ''
+  FLINT6:
+    RewardType: money
+    PriceType: item
+    Price: 
+    - - type:FLINT
+      - amount:1
+    Reward: 5.0
+    MenuItem:
+    - type:FLINT
+    - amount: 1
+    - 'lore:&rAmount: 1#&rPrice: $5.00'
+    Message: ''
+    InventoryLocation: 7
+    ExtraPermission: ''
+  COAL7:
+    RewardType: money
+    PriceType: item
+    Price: 
+    - - type:COAL
+      - amount:1
+    Reward: 7.0
+    MenuItem:
+    - type:COAL
+    - amount: 1
+    - 'lore:&rAmount: 1#&rPrice: $7.00'
+    Message: ''
+    InventoryLocation: 8
+    ExtraPermission: ''
+  EMERALD8:
+    RewardType: money
+    PriceType: item
+    Price: 
+    - - type:EMERALD
+      - amount:1
+    Reward: 50.0
+    MenuItem:
+    - type:EMERALD
+    - amount: 1
+    - 'lore:&rAmount: 1#&rPrice: $50.00'
+    Message: ''
+    InventoryLocation: 9
+    ExtraPermission: ''
+  MONSTER_EGG9:
+    RewardType: money
+    PriceType: item
+    Price: 
+    - - type:MONSTER_EGG
+      - durability:60
+      - amount:1
+    Reward: 1500.0
+    MenuItem:
+    - type:MONSTER_EGG
+    - durability:60
+    - amount: 1
+    - 'lore:&rAmount: 1#&rPrice: $1500.00'
+    Message: ''
+    InventoryLocation: 10
+    ExtraPermission: ''

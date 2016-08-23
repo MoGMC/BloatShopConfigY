@@ -1,0 +1,73 @@
+ShopName: Menu
+DisplayName: 'Menu'
+shop:
+  WHEAT0:
+    RewardType: shop
+    PriceType: free
+    Price: 0.0
+    Reward: BuyShop
+    MenuItem:
+    - type:WHEAT
+    - 'name:&4Buy Shop'
+    - durability:0
+    - amount: 1
+    
+    Message: ''
+    InventoryLocation: 1
+    ExtraPermission: ''
+  GLASS1:
+    RewardType: shop
+    PriceType: free
+    Price: 0.0
+    Reward: BuyShop2
+    MenuItem:
+    - type:GLASS
+    - 'name:&4Buy Shop 2'
+    - durability:0
+    - amount: 1
+    
+    Message: ''
+    InventoryLocation: 2
+    ExtraPermission: ''
+  POTATO_ITEM3:
+    RewardType: shop
+    PriceType: free
+    Price: 0.0
+    Reward: BulkBuyShop
+    MenuItem:
+    - type:POTATO_ITEM
+    - 'name:&4Bulk Buy Shop'
+    - durability:0
+    - amount: 1
+    
+    Message: ''
+    InventoryLocation: 4
+    ExtraPermission: ''
+  LOG4:
+    RewardType: shop
+    PriceType: free
+    Price: 0.0
+    Reward: BulkBuyShop2
+    MenuItem:
+    - type:LOG
+    - 'name:&4Bulk Buy Shop 2'
+    - durability:0
+    - amount: 1
+    
+    Message: ''
+    InventoryLocation: 5
+    ExtraPermission: ''
+  GOLD_INGOT8:
+    RewardType: shop
+    PriceType: free
+    Price: 0.0
+    Reward: SellShop
+    MenuItem:
+    - type:GOLD_INGOT
+    - 'name:&4Sell Shop'
+    - durability:0
+    - amount: 1
+    
+    Message: ''
+    InventoryLocation: 9
+    ExtraPermission: ''

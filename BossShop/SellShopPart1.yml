@@ -1,10 +1,13 @@
-ShopName: BulkBuyShop
-DisplayName: 'Bulk Buy Shop'
+ShopName: SellShopPart1
+DisplayName: 'Sell Shop'
 shop:
   HAY_BLOCK44:
     RewardType: shop
     PriceType: free
-    Price: 0.0
+    Price: 
+    - - type:HAY_BLOCK
+      - 'name:&rBack'
+      - amount:1
     Reward: menu
     MenuItem:
     - type:HAY_BLOCK
@@ -14,431 +17,417 @@ shop:
     Message: ''
     InventoryLocation: 45
     ExtraPermission: ''
-  WHEAT43:
-    RewardType: shop
-    PriceType: free
-    Price: 0.0
-    Reward: BuyShop
-    MenuItem:
-    - type:WHEAT
-    - 'name:&4Buy Shop'
-    - durability:0
-    - amount: 1
-    
-    Message: ''
-    InventoryLocation: 44
-    ExtraPermission: ''
   WHEAT0:
-    RewardType: item
-    PriceType: money
-    Price: 256.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:WHEAT
-      - amount:64
+      - amount:1
+    Reward: 2.0
     MenuItem:
     - type:WHEAT
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $256.00'
+    - 'lore:&rAmount: 1#&rPrice: $2.00'
     Message: ''
     InventoryLocation: 1
     ExtraPermission: ''
   MELON1:
-    RewardType: item
-    PriceType: money
-    Price: 64.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:MELON
-      - amount:64
+      - amount:1
+    Reward: 0.5
     MenuItem:
     - type:MELON
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $64.00'
+    - 'lore:&rAmount: 1#&rPrice: $0.50'
     Message: ''
     InventoryLocation: 2
     ExtraPermission: ''
   PUMPKIN2:
-    RewardType: item
-    PriceType: money
-    Price: 256.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:PUMPKIN
-      - amount:64
+      - amount:1
+    Reward: 2.0
     MenuItem:
     - type:PUMPKIN
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $256.00'
+    - 'lore:&rAmount: 1#&rPrice: $2.00'
     Message: ''
     InventoryLocation: 3
     ExtraPermission: ''
   APPLE3:
-    RewardType: item
-    PriceType: money
-    Price: 1024.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:APPLE
-      - amount:64
+      - amount:1
+    Reward: 8.0
     MenuItem:
     - type:APPLE
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $1024.00'
+    - 'lore:&rAmount: 1#&rPrice: $8.00'
     Message: ''
     InventoryLocation: 4
     ExtraPermission: ''
   SUGAR_CANE4:
-    RewardType: item
-    PriceType: money
-    Price: 256.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:SUGAR_CANE
-      - amount:64
+      - amount:1
+    Reward: 2.0
     MenuItem:
     - type:SUGAR_CANE
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $256.00'
+    - 'lore:&rAmount: 1#&rPrice: $2.00'
     Message: ''
     InventoryLocation: 5
     ExtraPermission: ''
   CARROT_ITEM5:
-    RewardType: item
-    PriceType: money
-    Price: 256.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:CARROT_ITEM
-      - amount:64
+      - amount:1
+    Reward: 2.0
     MenuItem:
     - type:CARROT_ITEM
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $256.00'
+    - 'lore:&rAmount: 1#&rPrice: $2.00'
     Message: ''
     InventoryLocation: 6
     ExtraPermission: ''
   POTATO_ITEM6:
-    RewardType: item
-    PriceType: money
-    Price: 256.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:POTATO_ITEM
-      - amount:64
+      - amount:1
+    Reward: 2.0
     MenuItem:
     - type:POTATO_ITEM
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $256.00'
+    - 'lore:&rAmount: 1#&rPrice: $2.00'
     Message: ''
     InventoryLocation: 7
     ExtraPermission: ''
   BAKED_POTATO7:
-    RewardType: item
-    PriceType: money
-    Price: 512.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:BAKED_POTATO
-      - amount:64
+      - amount:1
+    Reward: 4.0
     MenuItem:
     - type:BAKED_POTATO
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $512.00'
+    - 'lore:&rAmount: 1#&rPrice: $4.00'
     Message: ''
     InventoryLocation: 8
     ExtraPermission: ''
   RAW_FISH8:
-    RewardType: item
-    PriceType: money
-    Price: 1280.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:RAW_FISH
-      - amount:64
+      - amount:1
+    Reward: 10.0
     MenuItem:
     - type:RAW_FISH
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $1280.00'
+    - 'lore:&rAmount: 1#&rPrice: $10.00'
     Message: ''
     InventoryLocation: 9
     ExtraPermission: ''
   RAW_FISH9:
-    RewardType: item
-    PriceType: money
-    Price: 1920.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:RAW_FISH
       - durability:1
-      - amount:64
+      - amount:1
+    Reward: 15.0
     MenuItem:
     - type:RAW_FISH
     - durability:1
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $1920.00'
+    - 'lore:&rAmount: 1#&rPrice: $15.00'
     Message: ''
     InventoryLocation: 10
     ExtraPermission: ''
   RAW_FISH10:
-    RewardType: item
-    PriceType: money
-    Price: 3200.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:RAW_FISH
       - durability:3
-      - amount:64
+      - amount:1
+    Reward: 25.0
     MenuItem:
     - type:RAW_FISH
     - durability:3
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $3200.00'
+    - 'lore:&rAmount: 1#&rPrice: $25.00'
     Message: ''
     InventoryLocation: 11
     ExtraPermission: ''
   RAW_FISH11:
-    RewardType: item
-    PriceType: money
-    Price: 6400.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:RAW_FISH
       - durability:2
-      - amount:64
+      - amount:1
+    Reward: 50.0
     MenuItem:
     - type:RAW_FISH
     - durability:2
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $6400.00'
+    - 'lore:&rAmount: 1#&rPrice: $50.00'
     Message: ''
     InventoryLocation: 12
     ExtraPermission: ''
   COOKED_CHICKEN12:
-    RewardType: item
-    PriceType: money
-    Price: 896.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:COOKED_CHICKEN
-      - amount:64
+      - amount:1
+    Reward: 7.0
     MenuItem:
     - type:COOKED_CHICKEN
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $896.00'
+    - 'lore:&rAmount: 1#&rPrice: $7.00'
     Message: ''
     InventoryLocation: 13
     ExtraPermission: ''
   EGG13:
-    RewardType: item
-    PriceType: money
-    Price: 256.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:EGG
-      - amount:64
+      - amount:1
+    Reward: 2.0
     MenuItem:
     - type:EGG
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $256.00'
+    - 'lore:&rAmount: 1#&rPrice: $2.00'
     Message: ''
     InventoryLocation: 14
     ExtraPermission: ''
   LEATHER14:
-    RewardType: item
-    PriceType: money
-    Price: 640.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:LEATHER
-      - amount:64
+      - amount:1
+    Reward: 5.0
     MenuItem:
     - type:LEATHER
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $640.00'
+    - 'lore:&rAmount: 1#&rPrice: $5.00'
     Message: ''
     InventoryLocation: 15
     ExtraPermission: ''
   FEATHER15:
-    RewardType: item
-    PriceType: money
-    Price: 640.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:FEATHER
-      - amount:64
+      - amount:1
+    Reward: 5.0
     MenuItem:
     - type:FEATHER
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $640.00'
+    - 'lore:&rAmount: 1#&rPrice: $5.00'
     Message: ''
     InventoryLocation: 16
     ExtraPermission: ''
   WOOL16:
-    RewardType: item
-    PriceType: money
-    Price: 256.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:WOOL
-      - amount:64
+      - amount:1
+    Reward: 2.0
     MenuItem:
     - type:WOOL
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $256.00'
+    - 'lore:&rAmount: 1#&rPrice: $2.00'
     Message: ''
     InventoryLocation: 17
     ExtraPermission: ''
   STRING17:
-    RewardType: item
-    PriceType: money
-    Price: 64.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:STRING
-      - amount:64
+      - amount:1
+    Reward: 0.5
     MenuItem:
     - type:STRING
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $64.00'
+    - 'lore:&rAmount: 1#&rPrice: $0.50'
     Message: ''
     InventoryLocation: 18
     ExtraPermission: ''
   SPIDER_EYE18:
-    RewardType: item
-    PriceType: money
-    Price: 640.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:SPIDER_EYE
-      - amount:64
+      - amount:1
+    Reward: 5.0
     MenuItem:
     - type:SPIDER_EYE
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $640.00'
+    - 'lore:&rAmount: 1#&rPrice: $5.00'
     Message: ''
     InventoryLocation: 19
     ExtraPermission: ''
   BONE19:
-    RewardType: item
-    PriceType: money
-    Price: 640.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:BONE
-      - amount:64
+      - amount:1
+    Reward: 5.0
     MenuItem:
     - type:BONE
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $640.00'
+    - 'lore:&rAmount: 1#&rPrice: $5.00'
     Message: ''
     InventoryLocation: 20
     ExtraPermission: ''
   ROTTEN_FLESH20:
-    RewardType: item
-    PriceType: money
-    Price: 256.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:ROTTEN_FLESH
-      - amount:64
+      - amount:1
+    Reward: 2.0
     MenuItem:
     - type:ROTTEN_FLESH
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $256.00'
+    - 'lore:&rAmount: 1#&rPrice: $2.00'
     Message: ''
     InventoryLocation: 21
     ExtraPermission: ''
   SULPHUR21:
-    RewardType: item
-    PriceType: money
-    Price: 640.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:SULPHUR
-      - amount:64
+      - amount:1
+    Reward: 5.0
     MenuItem:
     - type:SULPHUR
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $640.00'
+    - 'lore:&rAmount: 1#&rPrice: $5.00'
     Message: ''
     InventoryLocation: 22
     ExtraPermission: ''
   SLIME_BALL22:
-    RewardType: item
-    PriceType: money
-    Price: 3200.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:SLIME_BALL
-      - amount:64
+      - amount:1
+    Reward: 25.0
     MenuItem:
     - type:SLIME_BALL
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $3200.00'
+    - 'lore:&rAmount: 1#&rPrice: $25.00'
     Message: ''
     InventoryLocation: 23
     ExtraPermission: ''
   ENDER_PEARL23:
-    RewardType: item
-    PriceType: money
-    Price: 12800.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:ENDER_PEARL
-      - amount:64
+      - amount:1
+    Reward: 100.0
     MenuItem:
     - type:ENDER_PEARL
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $12800.00'
+    - 'lore:&rAmount: 1#&rPrice: $100.00'
     Message: ''
     InventoryLocation: 24
     ExtraPermission: ''
   SEEDS24:
-    RewardType: item
-    PriceType: money
-    Price: 128.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:SEEDS
-      - amount:64
+      - amount:1
+    Reward: 1.0
     MenuItem:
     - type:SEEDS
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $128.00'
+    - 'lore:&rAmount: 1#&rPrice: $1.00'
     Message: ''
     InventoryLocation: 25
     ExtraPermission: ''
   PUMPKIN_SEEDS25:
-    RewardType: item
-    PriceType: money
-    Price: 64.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:PUMPKIN_SEEDS
-      - amount:64
+      - amount:1
+    Reward: 0.5
     MenuItem:
     - type:PUMPKIN_SEEDS
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $64.00'
+    - 'lore:&rAmount: 1#&rPrice: $0.50'
     Message: ''
     InventoryLocation: 26
     ExtraPermission: ''
   MELON_SEEDS26:
-    RewardType: item
-    PriceType: money
-    Price: 64.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:MELON_SEEDS
-      - amount:64
+      - amount:1
+    Reward: 0.5
     MenuItem:
     - type:MELON_SEEDS
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $64.00'
+    - 'lore:&rAmount: 1#&rPrice: $0.50'
     Message: ''
     InventoryLocation: 27
     ExtraPermission: ''
   INK_SACK27:
-    RewardType: item
-    PriceType: money
-    Price: 128.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:INK_SACK
       - durability:3
-      - amount:64
+      - amount:1
+    Reward: 1.0
     MenuItem:
     - type:INK_SACK
     - durability:3
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $128.00'
+    - 'lore:&rAmount: 1#&rPrice: $1.00'
     Message: ''
     InventoryLocation: 28
     ExtraPermission: ''
   SAPLING28:
-    RewardType: item
-    PriceType: money
-    Price: 256.0
-    Reward: 
+    RewardType: money
+    PriceType: item
+    Price: 
     - - type:SAPLING
-      - amount:64
+      - amount:1
+    Reward: 2.0
     MenuItem:
     - type:SAPLING
     - amount: 1
-    - 'lore:&rAmount: 64#&rPrice: $256.00'
+    - 'lore:&rAmount: 1#&rPrice: $2.00'
     Message: ''
     InventoryLocation: 29
     ExtraPermission: ''

@@ -1,7 +1,9 @@
 package net.hilaryoi.plugin.util.BloatShopConfigY;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.bukkit.configuration.ConfigurationSection;
 
@@ -14,28 +16,29 @@ public class Shop {
 		boolean isBuyShop;
 		String displayName;
 
-		List<ShopItem> items;
+		List<Item> items;
 
 		boolean[] inv;
 
 		public Shop(String shopId, ConfigurationSection config) {
 
-			inv = new boolean[27];
+			// 54 is max
+			inv = new boolean[54];
 
 			this.shopId = shopId;
 
 			isBuyShop = config.getString("type").equalsIgnoreCase("buy");
 			displayName = config.getString("name");
 
-			items = new ArrayList<ShopItem>();
+			items = new ArrayList<Item>();
 
 			ConfigurationSection itemsConfig = config.getConfigurationSection("items");
 
 			for (String itemKey : itemsConfig.getKeys(false)) {
 
-					ShopItem item = new ShopItem(Util.fromMarkup(itemKey, isBuyShop), itemsConfig.getDouble(itemKey));
+					Item item = Util.fromMarkup(itemKey, itemsConfig.getDouble(itemKey), isBuyShop);
 
-					if (item.getRawItem().getInvSlot() == -1) {
+					if (item.getInvSlot() == -1) {
 
 						for (int i = 0; i < inv.length; i++) {
 
@@ -43,7 +46,7 @@ public class Shop {
 
 									System.out.println(i);
 
-									item.getRawItem().setInvSlot(i);
+									item.setInvSlot(i);
 
 									break;
 
@@ -52,13 +55,13 @@ public class Shop {
 
 					}
 
-					if (item.getRawItem().getInvSlot() == -1) {
+					if (item.getInvSlot() == -1) {
 						System.err.println("Inventory conflict: Item could not be assigned a slot. Is the inventory full? Skipping item " + itemKey);
 						continue;
 
 					}
 
-					inv[item.getRawItem().getInvSlot()] = true;
+					inv[item.getInvSlot()] = true;
 
 					items.add(item);
 
@@ -76,7 +79,7 @@ public class Shop {
 			s.append(displayName);
 			s.append("'\nshop:\n");
 
-			for (ShopItem item : items) {
+			for (Item item : items) {
 
 					s.append(item.toBloat(isBuyShop));
 
@@ -86,18 +89,102 @@ public class Shop {
 
 		}
 
-		public Shop(Shop shop) {
+		public Shop(String newId, Shop oldShop, ConfigurationSection config, Parser parser) {
 
-			this.shopId = shop.shopId;
-			this.isBuyShop = shop.isBuyShop;
-			this.displayName = shop.displayName;
-			this.items = shop.items;
-			this.inv = shop.inv;
+			if (oldShop == null) {
+					System.err.println("Error while creating shop " + newId + ": Cannot find old shop.");
+			}
 
+			shopId = oldShop.getShopId();
+			isBuyShop = oldShop.isBuyShop();
+			displayName = oldShop.getDisplayName();
+			inv = oldShop.getInv();
+
+			shopId = newId;
+
+			isBuyShop = config.getString("newtype").equalsIgnoreCase("buy");
+			displayName = config.getString("name");
+
+			double priceMultiplier = config.getDouble("pricemultiplier");
+			double quantityMultiplier = config.getDouble("quantitymultiplier");
+
+			List<String> excluding = config.getStringList("exclude");
+
+			if (excluding == null) {
+					excluding = new ArrayList<String>();
+
+			}
+
+			items = new ArrayList<Item>();
+
+			for (Item i : oldShop.getItems()) {
+
+					if (!excluding.contains(i.getMarkup())) {
+						items.add(new Item(i, isBuyShop, priceMultiplier, quantityMultiplier));
+
+					}
+
+			}
+
+			ConfigurationSection modifiedItemsConfig = config.getConfigurationSection("modify");
+
+			Set<String> modifiedItems;
+
+			if (modifiedItemsConfig == null) {
+					modifiedItems = new HashSet<String>();
+
+			} else {
+					modifiedItems = modifiedItemsConfig.getKeys(false);
+
+			}
+
+			for (String shopId : config.getStringList("shops")) {
+
+					items.addAll(parser.getShop(shopId).getItems());
+
+			}
+
+			// packs items
+
+			int slot = 0;
+
+			for (int i = 0; i < items.size(); i++) {
+
+					Item item = items.get(i);
+
+					if (modifiedItems.contains(item.getMarkup())) {
+
+						items.remove(i);
+
+						item = Util.fromMarkup(modifiedItemsConfig.getString(item.getMarkup()), item.getPrice(), isBuyShop);
+
+						items.add(i, item);
+
+					}
+
+					if (item.isRegularItem()) {
+
+						item.setInvSlot(slot);
+
+						slot++;
+
+					}
+
+			}
+
+		}
+
+		public String getShopId() {
+			return shopId;
 		}
 
 		public void setShopId(String shopId) {
 			this.shopId = shopId;
+
+		}
+
+		public boolean isBuyShop() {
+			return isBuyShop;
 
 		}
 
@@ -106,28 +193,28 @@ public class Shop {
 
 		}
 
-		public List<ShopItem> getItems() {
+		public String getDisplayName() {
+			return displayName;
+
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+
+		}
+
+		public List<Item> getItems() {
 			return items;
 
 		}
 
-		public Shop getModifiedShop(String newId, ConfigurationSection config) {
+		public void setItems(List<Item> items) {
+			this.items = items;
 
-			Shop shop = new Shop(this);
+		}
 
-			shop.setShopId(newId);
-
-			isBuyShop = config.getString("newtype").equalsIgnoreCase("buy");
-			displayName = config.getString("name");
-
-			for (ShopItem i : shop.getItems()) {
-
-					i.multiplyPrice(config.getDouble("pricemultiplier"));
-					i.multiplyQuantity(config.getDouble("quantitymultiplier"));
-
-			}
-
-			return shop;
+		public boolean[] getInv() {
+			return inv;
 
 		}
 

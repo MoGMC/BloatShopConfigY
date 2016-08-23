@@ -11,17 +11,83 @@ convert:
 #   exclude: (optional)
 #     - item (markup must be exactly the same)
 #     - item
+#   shops: (optional) (adds all the items of a shop to this shop)
+#     - shopid
+#     - shopid
 #   modify: (optional) (adds an item or changes an item with the exact same markup)
-#     item: price
-#       slot: slot (optional)
+#     item: newitem
+#     TODO: add manual price change
+#     TODO: combine "Exclude" and "Modify" lists
   BulkBuyShop:
     oldshop: BuyShop
     newtype: buy
     name: "Bulk Buy Shop"
     pricemultiplier: 64
     quantitymultiplier: 64
-
-
+    modify:
+      "POTATO_ITEM;43^&4Bulk Buy Shop]shop*free$BulkBuyShop@": "WHEAT;43^&4Buy Shop]shop*free$BuyShop@" # unbulk
+  BulkBuyShop2:
+    oldshop: BuyShop2
+    newtype: buy
+    name: "Bulk Buy Shop 2"
+    pricemultiplier: 64
+    quantitymultiplier: 64
+    modify:
+      "LOG;35^&4Bulk Buy Shop 2]shop*free$BulkBuyShop2@": "GLASS;35^&4Buy Shop 2]shop*free$BuyShop2@" # unbulk
+  SellShopPart1:
+    oldshop: BuyShop
+    newtype: sell
+    name: "Sell Shop"
+    pricemultiplier: 0.5
+    quantitymultiplier: 1
+    exclude:
+      - "POTATO_ITEM;43^&4Bulk Buy Shop]shop*free$BulkBuyShop@" # bulk
+  SellShopPart2:
+    oldshop: BuyShop2
+    newtype: sell
+    name: "Sell Shop 2"
+    pricemultiplier: 0.5
+    quantitymultiplier: 1
+    exclude:
+      - "LOG;35^&4Bulk Buy Shop 2]shop*free$BulkBuyShop2@" # bulk
+      - "GLASS;"
+      - "SAND;"
+      - "DIRT;"
+      - "MOSSY_COBBLESTONE;"
+      - "GRAVEL;"
+      - "IRON_INGOT;"
+      - "GOLD_INGOT;"
+      - "DIAMOND;"
+      - "INK_SACK;4:"
+      - "EXP_BOTTLE;"
+      - "IRON_BARDING;"
+      - "GOLD_BARDING;"
+      - "DIAMOND_BARDING;"
+      - "SADDLE;"
+  SellShop:
+    oldshop: SellShopPart1
+    newtype: sell
+    name: "Sell Shop"
+    pricemultiplier: 1
+    quantitymultiplier: 1
+    shops:
+      - SellShopPart2
+    modify:
+      "HAY_BLOCK;35^&rBack]shop*free$menu@": "HAY_BLOCK;53^&rBack]shop*free$menu@" 
+  BulkSellShop:
+    oldshop: SellShop
+    newtype: sell
+    name: "Bulk Sell Shop"
+    pricemultiplier: 64
+    quantitymultiplier: 64
+#  BulkSellShop2:
+#    oldshop: SellShop2
+#    newtype: sell
+#    name: "Bulk Sell Shop 2"
+#    pricemultiplier: 64
+#    quantitymultiplier: 64
+   
+    
 # End markers - data[end marker]
 # example: "WOOD_SWORD;1,DAMAGE_UNDEAD|2)LOOT_BONUS_MOBS|1)&8&lNeat Sword]"
   # Item name ';' https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
@@ -34,20 +100,88 @@ convert:
 shops:
 # shopid:
 #   type: buy/sell (either 'buy' or 'sell'; 'buy' exchanges player money for server items, 'sell' exchanges player item for server money)
-#   name: "My Shop"
+#   name: "Buy Shop"
 #   icon: STONE (the item representing the shop in a menu: can use markup.)
+#   size: 27 (size of shop inventory)
 #   items:
 #     item: price
 #       slot: slot (optional)
 #     item: price
 #     item: price
+  Menu:
+    type: buy
+    name: "Menu"
+    size: 18
+    items:
+      "WHEAT;&4Buy Shop]shop*free$BuyShop@": 0
+      "GLASS;&4Buy Shop 2]shop*free$BuyShop2@": 0
+      "POTATO_ITEM;3^&4Bulk Buy Shop]shop*free$BulkBuyShop@": 0
+      "LOG;4^&4Bulk Buy Shop 2]shop*free$BulkBuyShop2@": 0
+      "GOLD_INGOT;8^&4Sell Shop]shop*free$SellShop@": 0
   BuyShop:
     type: buy
-    name: "Foodstuffs"
-    icon: "WHEAT;"
+    name: "Buy Shop 1"
     items:
-      "BARRIER;26^&rBack]shop*free$": 0
-      "RAW_FISH;": 1
+      "HAY_BLOCK;44^&rBack]shop*free$menu@": 0
+      "POTATO_ITEM;43^&4Bulk Buy Shop]shop*free$BulkBuyShop@": 0 # Goes between bulk and non bulk shop
+      "WHEAT;": 4
       "MELON;": 1
-      "POTATO_ITEM;": 1
-      "EGG;": 1
+      "PUMPKIN;": 4
+      "APPLE;": 16
+      "SUGAR_CANE;": 4
+      "CARROT_ITEM;": 4
+      "POTATO_ITEM;": 4
+      "BAKED_POTATO;": 8
+      "RAW_FISH;0:": 20
+      "RAW_FISH;1:": 30
+      "RAW_FISH;3:": 50
+      "RAW_FISH;2:": 100
+      "COOKED_CHICKEN;": 14
+      "EGG;": 4
+      "LEATHER;": 10
+      "FEATHER;": 10
+      "WOOL;": 4
+      "STRING;": 1
+      "SPIDER_EYE;": 10
+      "BONE;": 10
+      "ROTTEN_FLESH;": 4
+      "SULPHUR;": 10
+      "SLIME_BALL;": 50
+      "ENDER_PEARL;": 200
+      "SEEDS;": 2
+      "PUMPKIN_SEEDS;": 1
+      "MELON_SEEDS;": 1
+      "INK_SACK;3:": 2
+      "SAPLING;": 4
+  BuyShop2:
+    type: buy
+    name: "Buy Shop 2"
+    items:
+      "HAY_BLOCK;35^&rBack]shop*free$menu@": 0
+      "LOG;34^&4Bulk Buy Shop 2]shop*free$BulkBuyShop2@": 0 # bulk button
+      "QUARTZ;": 100
+      "QUARTZ_BLOCK;": 900
+      "GLASS;": 14
+      "LOG;": 4
+      "SAND;": 10
+      "CACTUS;": 4
+      "DIRT;": 10
+      "COBBLESTONE;": 1
+      "MOSSY_COBBLESTONE;": 20
+      "OBSIDIAN;": 20
+      "GRAVEL;": 5
+      "FLINT;": 10
+      "COAL;": 14
+      "IRON_INGOT;": 50
+      "GOLD_INGOT;": 100
+      "DIAMOND;": 200
+      "INK_SACK;4:": 50
+      "EMERALD;": 100
+      "EXP_BOTTLE;": 50
+      "IRON_BARDING;": 500
+      "GOLD_BARDING;": 1000
+      "DIAMOND_BARDING;": 2000
+      "SADDLE;": 1000
+      
+      
+      
