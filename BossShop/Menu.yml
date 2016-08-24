@@ -1,73 +1,96 @@
 ShopName: Menu
 DisplayName: 'Menu'
 shop:
-  WHEAT0:
+  WHEAT10:
     RewardType: shop
     PriceType: free
     Price: 0.0
     Reward: BuyShop
     MenuItem:
     - type:WHEAT
-    - 'name:&4Buy Shop'
+    - 'name:&rBuy Shop'
     - durability:0
     - amount: 1
-    
     Message: ''
-    InventoryLocation: 1
+    InventoryLocation: 11
     ExtraPermission: ''
-  GLASS1:
+  GLASS19:
     RewardType: shop
     PriceType: free
     Price: 0.0
     Reward: BuyShop2
     MenuItem:
     - type:GLASS
-    - 'name:&4Buy Shop 2'
+    - 'name:&rBuy Shop 2'
     - durability:0
     - amount: 1
-    
     Message: ''
-    InventoryLocation: 2
+    InventoryLocation: 20
     ExtraPermission: ''
-  POTATO_ITEM3:
+  POTATO_ITEM13:
     RewardType: shop
     PriceType: free
     Price: 0.0
     Reward: BulkBuyShop
     MenuItem:
     - type:POTATO_ITEM
-    - 'name:&4Bulk Buy Shop'
+    - 'name:&r&lBulk&r Buy Shop'
     - durability:0
     - amount: 1
-    
     Message: ''
-    InventoryLocation: 4
+    InventoryLocation: 14
     ExtraPermission: ''
-  LOG4:
+  LOG22:
     RewardType: shop
     PriceType: free
     Price: 0.0
     Reward: BulkBuyShop2
     MenuItem:
     - type:LOG
-    - 'name:&4Bulk Buy Shop 2'
+    - 'name:&r&lBulk&r Buy Shop 2'
     - durability:0
     - amount: 1
-    
     Message: ''
-    InventoryLocation: 5
+    InventoryLocation: 23
     ExtraPermission: ''
-  GOLD_INGOT8:
+  IRON_INGOT16:
     RewardType: shop
     PriceType: free
     Price: 0.0
     Reward: SellShop
     MenuItem:
-    - type:GOLD_INGOT
-    - 'name:&4Sell Shop'
+    - type:IRON_INGOT
+    - 'name:&rSell Shop'
     - durability:0
     - amount: 1
-    
     Message: ''
-    InventoryLocation: 9
+    InventoryLocation: 17
+    ExtraPermission: ''
+  GOLD_INGOT25:
+    RewardType: shop
+    PriceType: free
+    Price: 0.0
+    Reward: BulkSellShop
+    MenuItem:
+    - type:GOLD_INGOT
+    - 'name:&r&lBulk&r Sell Shop'
+    - durability:0
+    - amount: 1
+    Message: ''
+    InventoryLocation: 26
+    ExtraPermission: ''
+  POTATO35:
+    RewardType: item
+    PriceType: money
+    Price: 0.0
+    Reward: 
+    - - type:POTATO
+      - durability:0
+      - amount:1
+    MenuItem:
+    - type:POTATO
+    - durability:0
+    - amount: 1
+    Message: 'null'
+    InventoryLocation: 36
     ExtraPermission: ''

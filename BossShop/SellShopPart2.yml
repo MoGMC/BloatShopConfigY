@@ -13,7 +13,6 @@ shop:
     - type:HAY_BLOCK
     - 'name:&rBack'
     - amount: 1
-    
     Message: ''
     InventoryLocation: 36
     ExtraPermission: ''
@@ -22,14 +21,13 @@ shop:
     PriceType: free
     Price: 
     - - type:LOG
-      - 'name:&4Bulk Buy Shop 2'
+      - 'name:&r&lBulk&r Buy Shop 2'
       - amount:1
     Reward: BulkBuyShop2
     MenuItem:
     - type:LOG
-    - 'name:&4Bulk Buy Shop 2'
+    - 'name:&r&lBulk&r Buy Shop 2'
     - amount: 1
-    
     Message: ''
     InventoryLocation: 35
     ExtraPermission: ''
@@ -44,7 +42,7 @@ shop:
     - type:QUARTZ
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $50.00'
-    Message: ''
+    Message: '&eSold %price%.'
     InventoryLocation: 30
     ExtraPermission: ''
   QUARTZ_BLOCK30:
@@ -58,7 +56,7 @@ shop:
     - type:QUARTZ_BLOCK
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $450.00'
-    Message: ''
+    Message: '&eSold %price%.'
     InventoryLocation: 31
     ExtraPermission: ''
   LOG31:
@@ -72,7 +70,7 @@ shop:
     - type:LOG
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $2.00'
-    Message: ''
+    Message: '&eSold %price%.'
     InventoryLocation: 32
     ExtraPermission: ''
   CACTUS32:
@@ -86,7 +84,7 @@ shop:
     - type:CACTUS
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $2.00'
-    Message: ''
+    Message: '&eSold %price%.'
     InventoryLocation: 33
     ExtraPermission: ''
   COBBLESTONE33:
@@ -100,7 +98,7 @@ shop:
     - type:COBBLESTONE
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $0.50'
-    Message: ''
+    Message: '&eSold %price%.'
     InventoryLocation: 34
     ExtraPermission: ''
   OBSIDIAN34:
@@ -114,7 +112,7 @@ shop:
     - type:OBSIDIAN
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $10.00'
-    Message: ''
+    Message: '&eSold %price%.'
     InventoryLocation: 35
     ExtraPermission: ''
   FLINT35:
@@ -128,7 +126,7 @@ shop:
     - type:FLINT
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $5.00'
-    Message: ''
+    Message: '&eSold %price%.'
     InventoryLocation: 36
     ExtraPermission: ''
   COAL36:
@@ -142,7 +140,7 @@ shop:
     - type:COAL
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $7.00'
-    Message: ''
+    Message: '&eSold %price%.'
     InventoryLocation: 37
     ExtraPermission: ''
   EMERALD37:
@@ -156,6 +154,6 @@ shop:
     - type:EMERALD
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $50.00'
-    Message: ''
+    Message: '&eSold %price%.'
     InventoryLocation: 38
     ExtraPermission: ''

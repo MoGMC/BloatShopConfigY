@@ -17,6 +17,8 @@ public class Item {
 		private String displayName;
 		String lore;
 
+		String message;
+
 		private String priceType, rewardType;
 
 		boolean isBuyShop;
@@ -62,7 +64,9 @@ public class Item {
 
 			s.append("\n    MenuItem:\n    ");
 			s.append(getBloatedMenuItem("    "));
-			s.append("\n    Message: ''\n    InventoryLocation: ");
+			s.append("\n    Message: '");
+			s.append(message);
+			s.append("'\n    InventoryLocation: ");
 			s.append(invSlot + 1);
 			s.append("\n    ExtraPermission: ''\n");
 
@@ -74,10 +78,12 @@ public class Item {
 
 			StringBuilder s = getInitialItemBloat(tab, 1);
 
-			s.append("- amount: 1\n");
-			s.append(tab);
+			s.append("- amount: 1");
 
 			if (!isFree() || !lore.isEmpty()) {
+
+					s.append("\n");
+					s.append(tab);
 
 					s.append("- 'lore:");
 
@@ -153,6 +159,8 @@ public class Item {
 
 			this.markup = markup;
 
+			this.message = "";
+
 			mat = Material.DIRT;
 			durability = -1;
 			amount = 1;
@@ -188,6 +196,7 @@ public class Item {
 			this.invSlot = oldItem.getInvSlot();
 			this.displayName = oldItem.getDisplayName();
 			this.lore = oldItem.getLore();
+			this.message = oldItem.getMessage();
 
 			priceType = oldItem.getPriceType();
 			rewardType = oldItem.getRewardType();
@@ -225,7 +234,7 @@ public class Item {
 
 			} else {
 					return false;
-					
+
 			}
 
 		}
@@ -241,6 +250,16 @@ public class Item {
 					s.append(getBloatedItem("      "));
 
 			}
+
+		}
+
+		public String getMessage() {
+			return message;
+
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
 
 		}
 

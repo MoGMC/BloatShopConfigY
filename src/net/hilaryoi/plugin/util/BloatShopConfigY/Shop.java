@@ -20,6 +20,8 @@ public class Shop {
 
 		boolean[] inv;
 
+		String message;
+
 		public Shop(String shopId, ConfigurationSection config) {
 
 			// 54 is max
@@ -30,13 +32,15 @@ public class Shop {
 			isBuyShop = config.getString("type").equalsIgnoreCase("buy");
 			displayName = config.getString("name");
 
+			message = config.getString("message");
+
 			items = new ArrayList<Item>();
 
 			ConfigurationSection itemsConfig = config.getConfigurationSection("items");
 
 			for (String itemKey : itemsConfig.getKeys(false)) {
 
-					Item item = Util.fromMarkup(itemKey, itemsConfig.getDouble(itemKey), isBuyShop);
+					Item item = Util.fromMarkup(itemKey, itemsConfig.getDouble(itemKey), isBuyShop, message);
 
 					if (item.getInvSlot() == -1) {
 
@@ -100,6 +104,13 @@ public class Shop {
 			displayName = oldShop.getDisplayName();
 			inv = oldShop.getInv();
 
+			message = oldShop.getMessage();
+
+			if (config.contains("message")) {
+					message = config.getString("message");
+
+			}
+
 			shopId = newId;
 
 			isBuyShop = config.getString("newtype").equalsIgnoreCase("buy");
@@ -156,13 +167,15 @@ public class Shop {
 
 						items.remove(i);
 
-						item = Util.fromMarkup(modifiedItemsConfig.getString(item.getMarkup()), item.getPrice(), isBuyShop);
+						item = Util.fromMarkup(modifiedItemsConfig.getString(item.getMarkup()), item.getPrice(), isBuyShop, message);
 
 						items.add(i, item);
 
 					}
 
 					if (item.isRegularItem()) {
+
+						item.setMessage(message);
 
 						item.setInvSlot(slot);
 
@@ -171,6 +184,11 @@ public class Shop {
 					}
 
 			}
+
+		}
+
+		public String getMessage() {
+			return message;
 
 		}
 

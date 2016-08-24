@@ -4,7 +4,7 @@ import org.bukkit.Material;
 
 public class Util {
 
-		public static Item fromMarkup(String markup, double price, boolean isBuyShop) {
+		public static Item fromMarkup(String markup, double price, boolean isBuyShop, String message) {
 
 			Item item = new Item(price, markup, isBuyShop);
 
@@ -83,6 +83,12 @@ public class Util {
 						b.append(c);
 
 					}
+
+			}
+
+			// TODO: add better manual override
+			if (item.isRegularItem()) {
+					item.setMessage(message);
 
 			}
 

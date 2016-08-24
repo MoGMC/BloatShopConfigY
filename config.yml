@@ -2,10 +2,11 @@
 
 # creates a new shop with price and quantity multipliers
 # note that the plugin converts shops by going down the list, so shops higher on the list will be created before those lower down.
-convert:
+convert: # TODO: make more things optional
 # newshop:
 #   oldshop: oldshopid
 #   newtype: buy/sell
+#   message: "mymessage" (changes message) (optional)
 #   pricemultiplier: multiplier (multiplies all prices by this)
 #   quantitymultiplier: multiplier (multiplies all prices by this)
 #   exclude: (optional)
@@ -25,7 +26,7 @@ convert:
     pricemultiplier: 64
     quantitymultiplier: 64
     modify:
-      "POTATO_ITEM;43^&4Bulk Buy Shop]shop*free$BulkBuyShop@": "WHEAT;43^&4Buy Shop]shop*free$BuyShop@" # unbulk
+      "POTATO_ITEM;43^&r&lBulk&r Buy Shop]shop*free$BulkBuyShop@": "WHEAT;43^&rBuy Shop]shop*free$BuyShop@" # unbulk
   BulkBuyShop2:
     oldshop: BuyShop2
     newtype: buy
@@ -33,7 +34,7 @@ convert:
     pricemultiplier: 64
     quantitymultiplier: 64
     modify:
-      "LOG;35^&4Bulk Buy Shop 2]shop*free$BulkBuyShop2@": "GLASS;35^&4Buy Shop 2]shop*free$BuyShop2@" # unbulk
+      "LOG;34^&r&lBulk&r Buy Shop 2]shop*free$BulkBuyShop2@": "GLASS;34^&rBuy Shop 2]shop*free$BuyShop2@" # unbulk
   SellShopPart1:
     oldshop: BuyShop
     newtype: sell
@@ -41,7 +42,7 @@ convert:
     pricemultiplier: 0.5
     quantitymultiplier: 1
     exclude:
-      - "POTATO_ITEM;43^&4Bulk Buy Shop]shop*free$BulkBuyShop@" # bulk
+      - "POTATO_ITEM;43^&r&lBulk&r Buy Shop]shop*free$BulkBuyShop@" # bulk
   SellShopPart2:
     oldshop: BuyShop2
     newtype: sell
@@ -49,7 +50,6 @@ convert:
     pricemultiplier: 0.5
     quantitymultiplier: 1
     exclude:
-      - "LOG;35^&4Bulk Buy Shop 2]shop*free$BulkBuyShop2@" # bulk
       - "GLASS;"
       - "SAND;"
       - "DIRT;"
@@ -68,11 +68,13 @@ convert:
     oldshop: SellShopPart1
     newtype: sell
     name: "Sell Shop"
+    message: "&eSold %price%."
     pricemultiplier: 1
     quantitymultiplier: 1
     shops:
       - SellShopPart2
     modify:
+      "LOG;34^&r&lBulk&r Buy Shop 2]shop*free$BulkBuyShop2@": "GOLD_INGOT;52^&r&lBulk&r Sell Shop]shop*free$BulkSellShop@" # TODO: make easier adding/removing instead of having to replace an entire item
       "HAY_BLOCK;35^&rBack]shop*free$menu@": "HAY_BLOCK;53^&rBack]shop*free$menu@" 
   BulkSellShop:
     oldshop: SellShop
@@ -80,6 +82,8 @@ convert:
     name: "Bulk Sell Shop"
     pricemultiplier: 64
     quantitymultiplier: 64
+    modify:
+      "GOLD_INGOT;52^&r&lBulk&r Sell Shop]shop*free$BulkSellShop@": "IRON_INGOT;52^&rSell Shop]shop*free$SellShop@"
 #  BulkSellShop2:
 #    oldshop: SellShop2
 #    newtype: sell
@@ -113,17 +117,20 @@ shops:
     name: "Menu"
     size: 18
     items:
-      "WHEAT;&4Buy Shop]shop*free$BuyShop@": 0
-      "GLASS;&4Buy Shop 2]shop*free$BuyShop2@": 0
-      "POTATO_ITEM;3^&4Bulk Buy Shop]shop*free$BulkBuyShop@": 0
-      "LOG;4^&4Bulk Buy Shop 2]shop*free$BulkBuyShop2@": 0
-      "GOLD_INGOT;8^&4Sell Shop]shop*free$SellShop@": 0
+      "WHEAT;10^&rBuy Shop]shop*free$BuyShop@": 0
+      "GLASS;19^&rBuy Shop 2]shop*free$BuyShop2@": 0
+      "POTATO_ITEM;13^&r&lBulk&r Buy Shop]shop*free$BulkBuyShop@": 0
+      "LOG;22^&r&lBulk&r Buy Shop 2]shop*free$BulkBuyShop2@": 0
+      "IRON_INGOT;16^&rSell Shop]shop*free$SellShop@": 0
+      "GOLD_INGOT;25^&r&lBulk&r Sell Shop]shop*free$BulkSellShop@": 0
+      "POTATO;35^": 0 # have to add this here because bossshop doesnt really have a way to set inventory size that i could find
   BuyShop:
     type: buy
+    message: "&ePurchased %reward%."
     name: "Buy Shop 1"
     items:
       "HAY_BLOCK;44^&rBack]shop*free$menu@": 0
-      "POTATO_ITEM;43^&4Bulk Buy Shop]shop*free$BulkBuyShop@": 0 # Goes between bulk and non bulk shop
+      "POTATO_ITEM;43^&r&lBulk&r Buy Shop]shop*free$BulkBuyShop@": 0 # Goes between bulk and non bulk shop
       "WHEAT;": 4
       "MELON;": 1
       "PUMPKIN;": 4
@@ -156,9 +163,10 @@ shops:
   BuyShop2:
     type: buy
     name: "Buy Shop 2"
+    message: "&ePurchased %reward%."
     items:
       "HAY_BLOCK;35^&rBack]shop*free$menu@": 0
-      "LOG;34^&4Bulk Buy Shop 2]shop*free$BulkBuyShop2@": 0 # bulk button
+      "LOG;34^&r&lBulk&r Buy Shop 2]shop*free$BulkBuyShop2@": 0 # bulk button
       "QUARTZ;": 100
       "QUARTZ_BLOCK;": 900
       "GLASS;": 14

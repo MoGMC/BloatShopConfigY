@@ -11,7 +11,6 @@ shop:
     - 'name:&rBack'
     - durability:0
     - amount: 1
-    
     Message: ''
     InventoryLocation: 36
     ExtraPermission: ''
@@ -22,10 +21,9 @@ shop:
     Reward: BulkBuyShop2
     MenuItem:
     - type:LOG
-    - 'name:&4Bulk Buy Shop 2'
+    - 'name:&r&lBulk&r Buy Shop 2'
     - durability:0
     - amount: 1
-    
     Message: ''
     InventoryLocation: 35
     ExtraPermission: ''
@@ -42,7 +40,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $100.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 1
     ExtraPermission: ''
   QUARTZ_BLOCK1:
@@ -58,7 +56,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $900.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 2
     ExtraPermission: ''
   GLASS2:
@@ -74,7 +72,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $14.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 3
     ExtraPermission: ''
   LOG3:
@@ -90,7 +88,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $4.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 4
     ExtraPermission: ''
   SAND4:
@@ -106,7 +104,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $10.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 5
     ExtraPermission: ''
   CACTUS5:
@@ -122,7 +120,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $4.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 6
     ExtraPermission: ''
   DIRT6:
@@ -138,7 +136,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $10.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 7
     ExtraPermission: ''
   COBBLESTONE7:
@@ -154,7 +152,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $1.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 8
     ExtraPermission: ''
   MOSSY_COBBLESTONE8:
@@ -170,7 +168,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $20.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 9
     ExtraPermission: ''
   OBSIDIAN9:
@@ -186,7 +184,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $20.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 10
     ExtraPermission: ''
   GRAVEL10:
@@ -202,7 +200,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $5.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 11
     ExtraPermission: ''
   FLINT11:
@@ -218,7 +216,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $10.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 12
     ExtraPermission: ''
   COAL12:
@@ -234,7 +232,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $14.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 13
     ExtraPermission: ''
   IRON_INGOT13:
@@ -250,7 +248,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $50.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 14
     ExtraPermission: ''
   GOLD_INGOT14:
@@ -266,7 +264,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $100.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 15
     ExtraPermission: ''
   DIAMOND15:
@@ -282,7 +280,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $200.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 16
     ExtraPermission: ''
   INK_SACK16:
@@ -298,7 +296,7 @@ shop:
     - durability:4
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $50.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 17
     ExtraPermission: ''
   EMERALD17:
@@ -314,7 +312,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $100.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 18
     ExtraPermission: ''
   EXP_BOTTLE18:
@@ -330,7 +328,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $50.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 19
     ExtraPermission: ''
   IRON_BARDING19:
@@ -346,7 +344,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $500.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 20
     ExtraPermission: ''
   GOLD_BARDING20:
@@ -362,7 +360,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $1000.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 21
     ExtraPermission: ''
   DIAMOND_BARDING21:
@@ -378,7 +376,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $2000.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 22
     ExtraPermission: ''
   SADDLE22:
@@ -394,6 +392,6 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $1000.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 23
     ExtraPermission: ''

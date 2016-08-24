@@ -11,7 +11,6 @@ shop:
     - 'name:&rBack'
     - durability:0
     - amount: 1
-    
     Message: ''
     InventoryLocation: 45
     ExtraPermission: ''
@@ -22,10 +21,9 @@ shop:
     Reward: BulkBuyShop
     MenuItem:
     - type:POTATO_ITEM
-    - 'name:&4Bulk Buy Shop'
+    - 'name:&r&lBulk&r Buy Shop'
     - durability:0
     - amount: 1
-    
     Message: ''
     InventoryLocation: 44
     ExtraPermission: ''
@@ -42,7 +40,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $4.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 1
     ExtraPermission: ''
   MELON1:
@@ -58,7 +56,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $1.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 2
     ExtraPermission: ''
   PUMPKIN2:
@@ -74,7 +72,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $4.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 3
     ExtraPermission: ''
   APPLE3:
@@ -90,7 +88,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $16.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 4
     ExtraPermission: ''
   SUGAR_CANE4:
@@ -106,7 +104,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $4.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 5
     ExtraPermission: ''
   CARROT_ITEM5:
@@ -122,7 +120,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $4.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 6
     ExtraPermission: ''
   POTATO_ITEM6:
@@ -138,7 +136,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $4.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 7
     ExtraPermission: ''
   BAKED_POTATO7:
@@ -154,7 +152,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $8.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 8
     ExtraPermission: ''
   RAW_FISH8:
@@ -168,7 +166,7 @@ shop:
     - type:RAW_FISH
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $20.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 9
     ExtraPermission: ''
   RAW_FISH9:
@@ -184,7 +182,7 @@ shop:
     - durability:1
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $30.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 10
     ExtraPermission: ''
   RAW_FISH10:
@@ -200,7 +198,7 @@ shop:
     - durability:3
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $50.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 11
     ExtraPermission: ''
   RAW_FISH11:
@@ -216,7 +214,7 @@ shop:
     - durability:2
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $100.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 12
     ExtraPermission: ''
   COOKED_CHICKEN12:
@@ -232,7 +230,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $14.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 13
     ExtraPermission: ''
   EGG13:
@@ -248,7 +246,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $4.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 14
     ExtraPermission: ''
   LEATHER14:
@@ -264,7 +262,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $10.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 15
     ExtraPermission: ''
   FEATHER15:
@@ -280,7 +278,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $10.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 16
     ExtraPermission: ''
   WOOL16:
@@ -296,7 +294,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $4.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 17
     ExtraPermission: ''
   STRING17:
@@ -312,7 +310,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $1.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 18
     ExtraPermission: ''
   SPIDER_EYE18:
@@ -328,7 +326,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $10.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 19
     ExtraPermission: ''
   BONE19:
@@ -344,7 +342,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $10.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 20
     ExtraPermission: ''
   ROTTEN_FLESH20:
@@ -360,7 +358,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $4.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 21
     ExtraPermission: ''
   SULPHUR21:
@@ -376,7 +374,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $10.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 22
     ExtraPermission: ''
   SLIME_BALL22:
@@ -392,7 +390,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $50.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 23
     ExtraPermission: ''
   ENDER_PEARL23:
@@ -408,7 +406,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $200.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 24
     ExtraPermission: ''
   SEEDS24:
@@ -424,7 +422,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $2.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 25
     ExtraPermission: ''
   PUMPKIN_SEEDS25:
@@ -440,7 +438,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $1.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 26
     ExtraPermission: ''
   MELON_SEEDS26:
@@ -456,7 +454,7 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $1.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 27
     ExtraPermission: ''
   INK_SACK27:
@@ -472,7 +470,7 @@ shop:
     - durability:3
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $2.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 28
     ExtraPermission: ''
   SAPLING28:
@@ -488,6 +486,6 @@ shop:
     - durability:0
     - amount: 1
     - 'lore:&rAmount: 1#&rPrice: $4.00'
-    Message: ''
+    Message: '&ePurchased %reward%.'
     InventoryLocation: 29
     ExtraPermission: ''
